@@ -44,7 +44,7 @@ def dataScience():
 
 @app.route('/PowerBI')
 def powerBI():
-    return render_template('comingSoon.html', page_name="powerBI") )
+    return render_template('comingSoon.html', page_name="powerBI") 
 
 @app.route('/AIML')
 def AIML():
@@ -181,5 +181,6 @@ def crpyto():
 
 if __name__ == '__main__':
     app.run(debug=False, port=3000, host="0.0.0.0")
+
 
 
