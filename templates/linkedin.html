@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* ensures horizontal scroll if narrow device */
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            white-space: nowrap; /* prevent automatic wrapping */
+        }
+        thead th {
+            background-color: #0078d7;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f3f3f3;
+        }
+        tbody tr:hover {
+            background-color: #ddeeff;
+        }
+        /* Responsive tweaks */
+        @media screen and (max-width: 600px) {
+            table {
+                min-width: 100%;
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        {{ table | safe }}
+    </div>
+</body>
+</html>

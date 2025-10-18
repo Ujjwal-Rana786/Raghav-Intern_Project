@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scraped Data Output</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+            margin: 0;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(6px);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead tr {
+            background-color: #5a2e9d;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tbody tr:hover {
+            background-color: #f1f5f9;
+            transition: background-color 0.3s ease;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: #5a2e9d;
+        }
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 0.7rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {{ table | safe }}
+    </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explore More - CodroidHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            animation: bgChange 20s infinite alternate ease-in-out;
+            background: linear-gradient(120deg, #90caf9, #e3f2fd, #bbdefb);
+            transition: background 1s ease;
+        }
+
+        @keyframes bgChange {
+            0% { background: linear-gradient(120deg, #90caf9, #e3f2fd, #bbdefb); }
+            25% { background: linear-gradient(120deg, #a5d6a7, #dcedc8, #81c784); }
+            50% { background: linear-gradient(120deg, #ffe082, #fff8e1, #ffcc80); }
+            75% { background: linear-gradient(120deg, #f48fb1, #fce4ec, #f06292); }
+            100% { background: linear-gradient(120deg, #b39ddb, #ede7f6, #7e57c2); }
+        }
+
+        /* Header Styling */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 25px 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 85px;
+            z-index: 100;
+        }
+
+        header .logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: #007BFF;
+        }
+
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 18px;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #007BFF;
+            transition: width 0.3s ease;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+        header nav a:hover {
+            color: #007BFF;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 130px auto 40px;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #007BFF;
+            margin-bottom: 35px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.95);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .card img {
+            width: 80px;
+            margin-bottom: 18px;
+            transition: transform 0.4s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #007BFF;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #fff;
+            background: #007BFF;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card a:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,123,255,0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav a {
+                margin-left: 20px;
+                font-size: 16px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            main {
+                margin-top: 110px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 15px;
+            }
+            header nav {
+                margin-top: 10px;
+                flex-wrap: wrap;
+            }
+            header nav a {
+                margin: 5px 12px;
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .card img {
+                width: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Raghav</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/aboutUs">About Me</a>
+            <a href="/aboutCodroid" target="_blank">CodroidHub</a>
+            <a href="https://github.com/Annant123" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/raghavdutta?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+            <a href="/blogs">Blogs</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Explore More</h1>
+        <div class="cards-container">
+            
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4423/4423446.png" alt="Web Scraping Icon">
+                <h2>Web Scraping</h2>
+                <p>Learn how to collect and analyze data from websites using Python and automation tools.</p>
+                <a href="/scraping">Learn More</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="Data Science Icon">
+                <h2>Data Science</h2>
+                <p>Master data analysis, visualization, and machine learning techniques to solve real-world problems.</p>
+                <a href="/dataScience">Learn More</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Power BI Icon">
+                <h2>Power BI</h2>
+                <p>Create powerful, interactive dashboards and reports to turn raw data into insights.</p>
+                <a href="/PowerBI">Learn More</a>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="AI/ML Icon">
+                <h2>AI / Machine Learning</h2>
+                <p>Explore algorithms and techniques that enable machines to learn and make decisions efficiently.</p>
+                <a href="/AIML">Learn More</a>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

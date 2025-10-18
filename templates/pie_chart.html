@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Chart</title>
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            background: #f4f6f8;
+            padding: 40px;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        img {
+            width: 90%;
+            max-width: 900px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/scrape" class="button">🔙 Back</a>
+        <h2 class="title">📈 Chart Visualization</h2>
+    </div>
+
+    <div class="container">
+        <img src="{{ chart_url }}" alt="Chart">
+    </div>
+</body>
+</html>

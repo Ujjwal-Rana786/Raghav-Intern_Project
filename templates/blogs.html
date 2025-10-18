@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Blogs - CodroidHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            animation: bgChange 20s infinite alternate ease-in-out;
+            background: linear-gradient(120deg, #90caf9, #e3f2fd, #bbdefb);
+            transition: background 1s ease;
+        }
+
+        @keyframes bgChange {
+            0% { background: linear-gradient(120deg, #90caf9, #e3f2fd, #bbdefb); }
+            25% { background: linear-gradient(120deg, #a5d6a7, #dcedc8, #81c784); }
+            50% { background: linear-gradient(120deg, #ffe082, #fff8e1, #ffcc80); }
+            75% { background: linear-gradient(120deg, #f48fb1, #fce4ec, #f06292); }
+            100% { background: linear-gradient(120deg, #b39ddb, #ede7f6, #7e57c2); }
+        }
+
+        header {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            padding: 25px 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            height: 85px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 26px;
+            color: #007BFF;
+        }
+
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header nav a {
+            margin-left: 35px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #007BFF;
+            transition: width 0.3s ease;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+        header nav a:hover {
+            color: #007BFF;
+            transform: translateY(-2px);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1600px; /* wider page container */
+            margin: 130px auto 50px;
+            padding: 0 40px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #007BFF;
+            font-size: 40px;
+            letter-spacing: 1px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px; /* wider spacing */
+            justify-items: stretch;
+        }
+
+        .card {
+            background: #fff;
+            padding: 60px 40px; /* larger internal space */
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 360px; /* more height */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #007BFF;
+            margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 35px;
+        }
+
+        .card button {
+            align-self: flex-start;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 17px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,123,255,0.3);
+        }
+
+        @media (max-width: 1000px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding: 15px;
+            }
+            header nav {
+                margin-top: 10px;
+                flex-wrap: wrap;
+            }
+            header nav a {
+                margin: 5px 12px;
+                font-size: 14px;
+            }
+            h1 { font-size: 28px; }
+            main { margin-top: 90px; }
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Raghav</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/explore">Explore</a>
+            <a href="/aboutUs">About Me</a>
+            <a href="/aboutCodroid" target="_blank">CodroidHub</a>
+            <a href="https://github.com/Annant123" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/raghavdutta" target="_blank">LinkedIn</a>
+            <a href="/blogs">Blogs</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Latest Blogs</h1>
+        <div class="cards-container">
+            <div class="card">
+                <h2>Introduction to Web Scraping</h2>
+                <p>Discover the basics of web scraping, how it works, and the tools you'll need to start extracting data from websites efficiently and ethically. Explore real-world examples and beginner-friendly techniques to get started quickly.</p>
+                <button onclick="window.location.href='https://skillyatra.codroidhub.com/blogs/687dee0770d5a281cbd98fd2'">Read More</button>
+            </div>
+
+            <div class="card">
+                <h2>Getting Started with Data Science</h2>
+                <p>Data science combines statistics, programming, and domain expertise. Learn how to begin your journey, gain essential analytical skills, and explore Python tools to transform data into meaningful insights.</p>
+                <button onclick="alert('Read more about Getting Started with Data Science')">Read More</button>
+            </div>
+
+            <div class="card">
+                <h2>Power BI for Beginners</h2>
+                <p>Power BI is a powerful business analytics tool. Understand its interactive dashboards, learn to connect real-time datasets, and visualize KPIs that can help drive impactful, data-driven decision-making for businesses.</p>
+                <button onclick="alert('Read more about Power BI for Beginners')">Read More</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
